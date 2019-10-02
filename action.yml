@@ -1,0 +1,15 @@
+# action.yml
+name: 'dotnet-execute-tests
+description: 'Executes precompiled and published test assemblies'
+inputs:
+  location:  # id of input
+    description: 'Folder to run assemblies from'
+    required: true
+# outputs:
+#   time: # id of output
+#     description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.location }}
